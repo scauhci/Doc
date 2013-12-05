@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="fragment" content="!" />
+    <style type="text/css">
+      *{padding:0;margin:0;}
+      html{border-top:10px #1abf89 solid;}
+      body{width:800px;margin:0 auto;padding:5% 20px 20px;font-family:Palatino, Optima, Georgia, serif;}
+      @media all and (max-width:1024px){ body, pre a{width:60%;} }
+      small{color:#999;}
+      #toolbar{margin-bottom:1em;position:fixed;left:20px;margin-top:5px;}
+      #toolbar [class^="icon-"]:before, #toolbar [class*=" icon-"]:before{font-family:'pen'}
+      #mode{color:#1abf89;;cursor:pointer;}
+      #mode.disabled{color:#666;}
+      #mode:before{content: '\e813';}
+      #fork{position:fixed;right:0;top:0;}
+    </style>
+    <link rel="stylesheet" href="lib/css/pen.css" />
+  </head>
+
+  <body>
+    <div class="pen" ng-app="wiki" ng-view>
+      <script type="text/ng-template" id="wiki.html">
+        <div ng-bind-html="content"></div>
+      </script>
+    </div>
+
+    <script src="lib/js/angular.js"></script>
+    <script src="lib/js/angular-route.js"></script>
+    <script src="lib/js/angular-sanitize.js"></script>
+    <script src="lib/js/jquery.js"></script>
+    <script src="lib/js/marked.js"></script>
+    <script src="assets/js/wiki.js"></script>
+  </body>
+</html>
+
